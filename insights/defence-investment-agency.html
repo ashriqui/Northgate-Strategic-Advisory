@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Slower Start, a Faster System: Inside the Defence Investment Agency — Northgate Strategic Advisory</title>
+<meta name="description" content="Canada built a new agency to fix decades of slow defence procurement, and put a Bay Street veteran in charge of it. Here's what the Defence Investment Agency is actually trying to do, and why the transition itself carries real friction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --navy-mid: #112240;
+    --navy-light: #1a3358;
+    --gold: #c9a84c;
+    --gold-light: #e0c070;
+    --gold-dim: #8a6f30;
+    --cream: #f4f1eb;
+    --cream-dim: #ddd8cc;
+    --white: #ffffff;
+    --text-muted: #7a8fa6;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(13,27,46,0.97) 0%, transparent 100%); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); text-decoration: none; line-height: 1.2; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1px; background: var(--cream); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--cream); text-decoration: none; letter-spacing: 0.05em; }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-close { position: absolute; top: 24px; right: 40px; font-size: 28px; color: var(--cream-dim); cursor: pointer; background: none; border: none; }
+
+  .article-header { padding: 150px 40px 60px; position: relative; overflow: hidden; }
+  .article-header-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 30%, rgba(201,168,76,0.06) 0%, transparent 70%), linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+  .article-header-content { position: relative; max-width: 760px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 36px; transition: color 0.2s; }
+  .back-link:visited { color: var(--text-muted); }
+  .back-link:hover { color: var(--gold); }
+  .article-date { font-size: 10px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .article-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 48px); font-weight: 300; line-height: 1.2; color: var(--white); margin-bottom: 28px; }
+  .article-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+  .article-tag { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); border: 1px solid rgba(201,168,76,0.25); padding: 6px 14px; }
+
+  .section-divider { height: 1px; background: linear-gradient(to right, transparent, var(--navy-light), transparent); margin: 0 40px; }
+
+  .article-body { padding: 60px 40px 40px; }
+  .article-body-inner { max-width: 720px; margin: 0 auto; font-size: 15px; color: var(--cream-dim); line-height: 1.9; }
+  .article-body-inner p + p { margin-top: 18px; }
+  .article-subhead { border-left: 2px solid var(--gold); border-radius: 0; padding: 4px 0 4px 18px; margin: 36px 0 18px; }
+  .article-subhead h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--white); margin: 0; }
+
+  .contact-strip { padding: 90px 40px; background: var(--navy-mid); text-align: center; }
+  .contact-strip-inner { max-width: 560px; margin: 0 auto; }
+  .contact-strip-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 300; color: var(--white); margin-bottom: 20px; line-height: 1.2; }
+  .contact-strip-heading em { font-style: italic; color: var(--gold); }
+  .contact-strip-body { font-size: 14px; color: var(--cream-dim); margin-bottom: 36px; line-height: 1.75; }
+  .contact-email { display: inline-flex; align-items: center; gap: 14px; padding: 16px 40px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
+  .contact-email:hover { background: var(--gold-light); }
+
+  footer { padding: 32px 40px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-muted); }
+
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .article-header { padding: 120px 24px 48px; }
+    .article-body { padding: 44px 24px 24px; }
+    .section-divider { margin: 0 24px; }
+    .contact-strip { padding: 64px 24px; }
+    footer { padding: 24px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .nav-logo { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="../index.html#capabilities" onclick="closeMobileMenu()">Capabilities</a>
+  <a href="../index.html#approach" onclick="closeMobileMenu()">Approach</a>
+  <a href="../index.html#about" onclick="closeMobileMenu()">About</a>
+  <a href="../insights.html" onclick="closeMobileMenu()">Industry Insights</a>
+  <a href="../index.html#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Northgate<span> Strategic Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#capabilities">Capabilities</a></li>
+    <li><a href="../index.html#approach">Approach</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../insights.html" class="active">Industry Insights</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section class="article-header">
+  <div class="article-header-bg"></div>
+  <div class="article-header-content">
+    <a href="../insights.html" class="back-link">&larr; Industry Insights</a>
+    <p class="article-date">May 27, 2026</p>
+    <h1 class="article-title">A Slower Start, a Faster System: Inside the Defence Investment Agency</h1>
+    <div class="article-tags">
+      <span class="article-tag">Defence Procurement</span>
+      <span class="article-tag">Government Reform</span>
+      <span class="article-tag">Industry Outlook</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="article-body">
+  <div class="article-body-inner">
+    <p>This week, Canada announced a new airborne early warning partnership with Sweden, the GlobalEye procurement, explicitly framed by the government as guided by the priorities set out in the country's new Defence Industrial Strategy and led by its newest institution: the Defence Investment Agency. It's a useful moment to look at what the DIA actually is, who's now running it, and why its early days look less like a finished fix and more like a deliberate bet still proving itself out.</p>
+    <p>Canada has spent decades watching defence procurement crawl. Internal audits have found that even straightforward equipment purchases take roughly a decade to complete, and more complex programs can stretch from one to three decades. The DIA was built specifically to change that, and it's worth paying attention to who's now in the room.</p>
+
+    <div class="article-subhead"><h2>Finance Takes the Helm</h2></div>
+    <p>The DIA's inaugural CEO is Doug Guzman, who spent his prior career as deputy chairman of RBC. That's not a small detail. For an institution historically run by career civil servants and military procurement officers, bringing in someone with three decades in investment, finance, and leadership at one of Canada's biggest banks signals something real: this isn't being treated as a paperwork problem, it's being treated as a capital allocation and investment problem. Guzman himself framed it that way at launch, calling it a tremendous opportunity for partnership between government and business, and describing the goal as driving investment and building industrial capacity at the same time as meeting defence needs.</p>
+    <p>That framing matters for anyone in business, not just the defence sector. It suggests the DIA is meant to operate less like a traditional procurement office and more like an investment vehicle that happens to be buying military equipment, with the discipline, speed, and partnership mindset that implies.</p>
+
+    <div class="article-subhead"><h2>An Ambitious Mandate</h2></div>
+    <p>The numbers behind this are large enough to be worth knowing regardless of your industry. Canada's new Defence Industrial Strategy positions Canadian industry to access $180 billion in defence procurement opportunities and $290 billion in defence-related capital investment over the next ten years, with an estimated $125 billion in downstream economic benefit by 2035. The DIA has also introduced a 90-day approval standard specifically aimed at giving companies, especially small businesses, faster and more predictable decisions, along with a new crediting system meant to reward Canadian facility investment, research and development, and intellectual property transfer. On paper, this is a serious, well-funded attempt to fix a genuinely broken system.</p>
+
+    <div class="article-subhead"><h2>Growing Pains</h2></div>
+    <p>Here's the honest counterpoint, and it isn't coming from critics on the sidelines, it's coming from the industry itself. Before the DIA even launched, the Canadian Association of Defence and Security Industries raised a real concern: that standing up an entirely new central agency, with people and authorities being shuffled out of National Defence and Public Services and Procurement Canada into a new structure, carries a genuine risk of grinding the system to a halt in the short term, simply from the sheer complexity of the reorganization itself. The association's own leadership has said plainly that there are currently more questions than answers about how the agency will actually function day to day, and how it will affect companies in the middle of pursuing or delivering on contracts right now.</p>
+    <p>That's not a knock on the idea, it's just the honest reality of any major reorganization: before something gets faster, it often gets temporarily slower, as roles, approvals, and relationships get re-established under a new structure. Some procurement experts have echoed this too, noting it's simply too early to know whether the DIA is the long-term fix, since so much depends on how it ends up dividing authority with the departments it's meant to replace.</p>
+
+    <div class="article-subhead"><h2>The Practical Takeaway</h2></div>
+    <p>For a small or mid-size business, especially one without a long history in defence work, this is a moment worth watching rather than acting on impulsively. The structural intent, faster approvals, more predictable timelines, a real seat at the table for small and medium-sized businesses, is genuinely promising. But the transition period itself is likely to be uneven, with some delays and uncertainty simply baked into any reorganization this large. The practical move is to start positioning now, registering, understanding the framework the DIA says it operates under, and building the relationships that matter, while being realistic that the system may not feel noticeably faster for a little while yet.</p>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="contact-strip-inner">
+    <h2 class="contact-strip-heading">Have a question about<br><em>something you've read?</em></h2>
+    <p class="contact-strip-body">We're happy to talk through how any of this applies to your business specifically.</p>
+    <a href="mailto:alan.s@ngstrategic.com" class="contact-email">alan.s@ngstrategic.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Northgate<span> Strategic Advisory</span></div>
+  <p class="footer-copy">© 2025 Northgate Strategic Advisory. Toronto, Ontario.</p>
+</footer>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
+</script>
+</body>
+</html>
