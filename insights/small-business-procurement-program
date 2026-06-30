@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small Business Gets a Seat at the Table: Inside the New Procurement Program — Northgate Strategic Advisory</title>
+<meta name="description" content="Canada's new Small and Medium Business Procurement Program was due by spring 2026. Here's what's confirmed about the funding, the mandate, and what small businesses can do to prepare while details are still emerging.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --navy-mid: #112240;
+    --navy-light: #1a3358;
+    --gold: #c9a84c;
+    --gold-light: #e0c070;
+    --gold-dim: #8a6f30;
+    --cream: #f4f1eb;
+    --cream-dim: #ddd8cc;
+    --white: #ffffff;
+    --text-muted: #7a8fa6;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(13,27,46,0.97) 0%, transparent 100%); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); text-decoration: none; line-height: 1.2; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1px; background: var(--cream); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--cream); text-decoration: none; letter-spacing: 0.05em; }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-close { position: absolute; top: 24px; right: 40px; font-size: 28px; color: var(--cream-dim); cursor: pointer; background: none; border: none; }
+
+  .article-header { padding: 150px 40px 60px; position: relative; overflow: hidden; }
+  .article-header-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 30%, rgba(201,168,76,0.06) 0%, transparent 70%), linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+  .article-header-content { position: relative; max-width: 760px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 36px; transition: color 0.2s; }
+  .back-link:visited { color: var(--text-muted); }
+  .back-link:hover { color: var(--gold); }
+  .article-date { font-size: 10px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .article-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 48px); font-weight: 300; line-height: 1.2; color: var(--white); margin-bottom: 28px; }
+  .article-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+  .article-tag { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); border: 1px solid rgba(201,168,76,0.25); padding: 6px 14px; }
+
+  .section-divider { height: 1px; background: linear-gradient(to right, transparent, var(--navy-light), transparent); margin: 0 40px; }
+
+  .article-body { padding: 60px 40px 40px; }
+  .article-body-inner { max-width: 720px; margin: 0 auto; font-size: 15px; color: var(--cream-dim); line-height: 1.9; }
+  .article-body-inner p + p { margin-top: 18px; }
+  .article-subhead { border-left: 2px solid var(--gold); border-radius: 0; padding: 4px 0 4px 18px; margin: 36px 0 18px; }
+  .article-subhead h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--white); margin: 0; }
+
+  .contact-strip { padding: 90px 40px; background: var(--navy-mid); text-align: center; }
+  .contact-strip-inner { max-width: 560px; margin: 0 auto; }
+  .contact-strip-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 300; color: var(--white); margin-bottom: 20px; line-height: 1.2; }
+  .contact-strip-heading em { font-style: italic; color: var(--gold); }
+  .contact-strip-body { font-size: 14px; color: var(--cream-dim); margin-bottom: 36px; line-height: 1.75; }
+  .contact-email { display: inline-flex; align-items: center; gap: 14px; padding: 16px 40px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
+  .contact-email:hover { background: var(--gold-light); }
+
+  footer { padding: 32px 40px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-muted); }
+
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .article-header { padding: 120px 24px 48px; }
+    .article-body { padding: 44px 24px 24px; }
+    .section-divider { margin: 0 24px; }
+    .contact-strip { padding: 64px 24px; }
+    footer { padding: 24px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .nav-logo { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="../index.html#capabilities" onclick="closeMobileMenu()">Capabilities</a>
+  <a href="../index.html#approach" onclick="closeMobileMenu()">Approach</a>
+  <a href="../index.html#about" onclick="closeMobileMenu()">About</a>
+  <a href="../insights.html" onclick="closeMobileMenu()">Industry Insights</a>
+  <a href="../index.html#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Northgate<span> Strategic Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#capabilities">Capabilities</a></li>
+    <li><a href="../index.html#approach">Approach</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../insights.html" class="active">Industry Insights</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section class="article-header">
+  <div class="article-header-bg"></div>
+  <div class="article-header-content">
+    <a href="../insights.html" class="back-link">&larr; Industry Insights</a>
+    <p class="article-date">May 15, 2026</p>
+    <h1 class="article-title">Small Business Gets a Seat at the Table: Inside the New Procurement Program</h1>
+    <div class="article-tags">
+      <span class="article-tag">Small Business</span>
+      <span class="article-tag">Federal Procurement</span>
+      <span class="article-tag">Buy Canadian</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="article-body">
+  <div class="article-body-inner">
+    <p>Spring 2026 was the federal government's own deadline for launching the Small and Medium Business Procurement Program, a new initiative built specifically to make it easier for Canadian small and medium-sized businesses to compete for federal contracts. The program hasn't fully launched as of this writing, but enough detail has emerged over the past several months to start figuring out whether it's actually relevant to your business, and what to do while you wait for the final rollout.</p>
+
+    <div class="article-subhead"><h2>The Mandate</h2></div>
+    <p>This isn't a vague gesture. It's a joint initiative between Public Services and Procurement Canada and Innovation, Science and Economic Development Canada, backed by $79.9 million in dedicated funding over five years, starting in 2026-27. The stated goal is to create tailored procurement streams specifically for small and medium-sized businesses, provide dedicated support to help them navigate the federal system, and modernize the digital tools and processes that currently make bidding on government work harder than it needs to be. The federal government purchases about $37 billion in goods and services each year, and this program is explicitly aimed at making more of that spending accessible to smaller Canadian suppliers rather than concentrating it among large, established vendors.</p>
+
+    <div class="article-subhead"><h2>Why It Matters Now</h2></div>
+    <p>Government procurement reform usually happens slowly, but this one is arriving alongside several other Buy Canadian measures already in effect: a lower $5 million threshold for Canadian-content scoring, reciprocal procurement rules limiting eligibility for foreign suppliers, and a genuinely large wave of new federal spending in defence and infrastructure. Taken together, this is a real, structural push to widen who gets federal contracts, not just a single isolated program. A small business that positions itself correctly now is likely to be better placed to take advantage of this once it's fully live, rather than starting from zero after the announcement.</p>
+
+    <div class="article-subhead"><h2>What to Do While You Wait</h2></div>
+    <p>You don't need to wait for the official launch to start preparing. Registering as a vendor through Procurement Assistance Canada, the existing federal program that helps small and medium businesses understand and access procurement opportunities, is a sensible first step regardless of what the new program ultimately looks like. Getting familiar with CanadaBuys, where most government purchasing requirements over $25,000 for goods or $40,000 for services are already posted, means you'll already understand the basic mechanics of federal bidding once new SMB-specific streams open up. And if your business touches a strategic sector, infrastructure, construction, ICT, health, defence, or consumer and industrial goods and materials, it's worth understanding how the existing Canadian-content scoring advantage already works, since that's likely to interact directly with whatever the new SMB program introduces.</p>
+
+    <div class="article-subhead"><h2>The Honest Caveat</h2></div>
+    <p>Government programs announced with this much fanfare don't always launch exactly on schedule, or exactly as described. The details that matter most to a small business, what counts as eligible, how contracts will actually be set aside or streamed, whether there will be a real application process or simply better visibility into existing opportunities, still aren't fully public. The smart approach is cautious optimism: treat this as a genuine signal that the federal government is trying to open the door wider for smaller suppliers, while not betting your entire strategy on a program that hasn't fully arrived yet.</p>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="contact-strip-inner">
+    <h2 class="contact-strip-heading">Have a question about<br><em>something you've read?</em></h2>
+    <p class="contact-strip-body">We're happy to talk through how any of this applies to your business specifically.</p>
+    <a href="mailto:alan.s@ngstrategic.com" class="contact-email">alan.s@ngstrategic.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Northgate<span> Strategic Advisory</span></div>
+  <p class="footer-copy">© 2025 Northgate Strategic Advisory. Toronto, Ontario.</p>
+</footer>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
+</script>
+</body>
+</html>
