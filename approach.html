@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Our Approach | Northgate Strategic Advisory</title>
+<meta name="description" content="Every team inside a company is doing its job. Northgate makes sure they pull in the same direction, as close or as far as you want us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --navy-mid: #112240;
+    --navy-light: #1a3358;
+    --gold: #c9a84c;
+    --gold-light: #e0c070;
+    --gold-dim: #8a6f30;
+    --cream: #f4f1eb;
+    --cream-dim: #ddd8cc;
+    --white: #ffffff;
+    --text-muted: #7a8fa6;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  [hidden] { display: none !important; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(13,27,46,0.97) 0%, transparent 100%); transition: background 0.3s, padding 0.3s; }
+  nav.scrolled { background: rgba(13,27,46,0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.06); padding-top: 16px; padding-bottom: 16px; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); text-decoration: none; line-height: 1.2; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 22px; list-style: none; }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-cta { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 10px 20px; transition: all 0.25s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--gold); color: var(--navy); }
+  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 1px; background: var(--cream); }
+  .mobile-menu { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--cream); text-decoration: none; letter-spacing: 0.05em; }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu a.mobile-cta { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 14px 32px; margin-top: 8px; }
+  .mobile-close { position: absolute; top: 20px; right: 32px; font-size: 28px; color: var(--cream-dim); cursor: pointer; background: none; border: none; padding: 8px; }
+
+  /* SHARED TYPE */
+  .section-label { font-size: 10px; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 20px; }
+  .section-heading em { font-style: italic; color: var(--gold); }
+  .section-body { font-size: 15px; color: var(--cream-dim); line-height: 1.8; max-width: 620px; }
+  .section-divider { height: 1px; background: linear-gradient(to right, transparent, var(--navy-light), transparent); margin: 0 40px; }
+
+  .btn-ghost { display: inline-flex; align-items: center; gap: 14px; padding: 16px 36px; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: all 0.25s ease; }
+  .btn-ghost:hover { background: var(--gold); color: var(--navy); }
+  .btn-ghost svg { transition: transform 0.2s; }
+  .btn-ghost:hover svg { transform: translateX(4px); }
+  .btn-solid { display: inline-flex; align-items: center; gap: 14px; padding: 16px 40px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
+  .btn-solid:hover { background: var(--gold-light); }
+
+  /* CONTACT */
+  .contact { padding: 120px 40px; background: var(--navy); position: relative; overflow: hidden; }
+  .contact::before { content: ''; position: absolute; bottom: -200px; left: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 60%); pointer-events: none; }
+  .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; position: relative; }
+  .contact-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 24px; }
+  .contact-heading em { font-style: italic; color: var(--gold); }
+  .contact-body { font-size: 15px; color: var(--cream-dim); line-height: 1.75; margin-bottom: 44px; }
+  .contact-note { font-size: 12px; color: var(--text-muted); letter-spacing: 0.06em; margin-top: 20px; }
+
+  /* FOOTER */
+  footer { padding: 32px 40px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-muted); }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 1200px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 18px 24px; }
+    nav.scrolled { padding-top: 14px; padding-bottom: 14px; }
+    .nav-logo { font-size: 14px; }
+    .section-divider { margin: 0 24px; }
+    .contact { padding: 80px 24px; }
+    .btn-solid { padding: 16px 28px; font-size: 11px; }
+    footer { padding: 24px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+
+  .ah { padding: 150px 40px 80px; position: relative; overflow: hidden; }
+  .ah-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 55% 60% at 78% 45%, rgba(201,168,76,0.07) 0%, transparent 70%), linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+  .ah-inner { position: relative; max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+  .ah h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5.2vw, 72px); font-weight: 300; line-height: 1.08; color: var(--white); margin-bottom: 28px; }
+  .ah h1 em { font-style: italic; color: var(--gold); display: block; }
+  .ah-intro { font-size: 17px; color: var(--cream-dim); line-height: 1.75; max-width: 520px; }
+  .scene svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+  .sec { padding: 100px 40px; }
+  .sec.alt { background: var(--navy-mid); }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+  .h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.12; color: var(--white); margin-bottom: 16px; }
+  .sec-intro { font-size: 15px; color: var(--cream-dim); line-height: 1.8; max-width: 560px; }
+
+  .team-rows { margin-top: 56px; }
+  .team-row { display: grid; grid-template-columns: 84px minmax(0, 1fr) minmax(0, 1.25fr); gap: 40px; align-items: center; padding: 38px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+  .team-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .team-num { width: 60px; height: 60px; border: 1px solid rgba(201,168,76,0.45); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--gold); }
+  .team-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--white); line-height: 1.1; margin-bottom: 8px; }
+  .team-want { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .team-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; max-width: 340px; }
+  .team-voice { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 2.6vw, 34px); font-weight: 300; font-style: italic; line-height: 1.25; color: var(--cream); padding-left: 28px; border-left: 1px solid var(--gold); }
+  .voice-note { font-size: 11px; color: var(--text-muted); margin-top: 14px; letter-spacing: 0.04em; }
+
+  .chain { display: flex; align-items: stretch; margin-top: 72px; padding-top: 56px; }
+  .cnode { flex: 1 1 0; border: 1px solid rgba(244,241,235,0.28); background: var(--navy); padding: 22px 20px; text-align: center; }
+  .cnode b { display: block; font-size: 11px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); margin-bottom: 6px; }
+  .cnode span { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--cream-dim); line-height: 1.3; }
+  .clink { flex: 0 0 150px; position: relative; }
+  .clink::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed rgba(201,168,76,0.7); }
+  .clink i { position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; margin: -6px 0 0 -6px; background: var(--gold); transform: rotate(45deg); animation: pulse 2.4s ease-in-out infinite; }
+  .clink em { position: absolute; left: 50%; bottom: calc(50% + 24px); transform: translateX(-50%); width: 150px; text-align: center; font-style: normal; font-size: 11px; line-height: 1.45; color: var(--gold); letter-spacing: 0.04em; }
+  .clink em::after { content: ''; position: absolute; left: 50%; top: calc(100% + 4px); height: 14px; border-left: 1px dotted rgba(201,168,76,0.7); }
+  .chain-base { margin-top: 20px; border: 1px dashed rgba(244,241,235,0.28); padding: 16px 20px; text-align: center; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); }
+  .chain-base span { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; letter-spacing: 0; text-transform: none; color: var(--cream-dim); margin-left: 12px; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: rotate(45deg) scale(1); } 50% { opacity: 0.45; transform: rotate(45deg) scale(0.75); } }
+  .bridge { margin-top: 72px; font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3.6vw, 46px); font-weight: 300; line-height: 1.3; color: var(--white); max-width: 900px; }
+  .bridge span { display: block; }
+  .bridge b { font-weight: 500; color: var(--gold); }
+
+  .band-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center; }
+  .lead { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.4vw, 46px); font-weight: 300; line-height: 1.2; color: var(--white); margin-bottom: 36px; }
+  .steps { list-style: none; }
+  .steps li { display: grid; grid-template-columns: 52px 1fr; gap: 8px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; color: var(--cream-dim); line-height: 1.7; }
+  .steps li:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .steps .n { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold); line-height: 1; }
+  .steps strong { color: var(--cream); font-weight: 400; }
+  .result { margin-top: 28px; font-size: 15px; color: var(--cream); line-height: 1.7; }
+
+  .inv-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center; }
+  .dial svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .dial input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 2px; background: linear-gradient(to right, var(--gold), var(--navy-light)); outline: none; margin: 24px 0 14px; cursor: pointer; }
+  .dial input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--navy); border: 2px solid var(--gold); cursor: grab; }
+  .dial input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: var(--navy); border: 2px solid var(--gold); cursor: grab; }
+  .dial input[type=range]:focus-visible { outline: 2px solid var(--gold); outline-offset: 10px; }
+  .dial-ends { display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .dial-cap { display: grid; margin-top: 22px; min-height: 52px; }
+  .dial-cap p { grid-area: 1 / 1; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; font-style: italic; color: var(--white); line-height: 1.3; transition: opacity 0.2s; }
+  .dial-hint { font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+
+  .contact.strip { background: var(--navy); padding: 90px 40px; }
+  .contact.strip .contact-heading { font-size: clamp(28px, 4vw, 42px); }
+  .contact.strip .contact-body { margin-bottom: 32px; font-size: 14px; }
+
+  @media (max-width: 960px) {
+    .ah-inner, .band-grid, .inv-grid { grid-template-columns: 1fr; gap: 40px; }
+    .team-row { grid-template-columns: 64px 1fr; gap: 20px 24px; }
+    .chain { flex-direction: column; padding-top: 0; }
+    .clink { flex: 0 0 96px; }
+    .clink::before { left: 50%; right: auto; top: 0; bottom: 0; border-top: none; border-left: 1px dashed rgba(201,168,76,0.7); }
+    .clink em { left: calc(50% + 24px); bottom: auto; top: 50%; transform: translateY(-50%); width: 140px; text-align: left; }
+    .clink em::after { display: none; }
+    .team-voice { grid-column: 1 / -1; }
+  }
+  @media (max-width: 768px) {
+    .ah { padding: 116px 24px 56px; }
+    .sec { padding: 68px 24px; }
+    .team-num { width: 48px; height: 48px; font-size: 20px; }
+    .team-name { font-size: 26px; }
+    .contact.strip { padding: 60px 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { .clink i { animation: none; } }
+
+  .ah.slim { padding: 150px 40px 72px; }
+  .ah.slim .ah-inner { grid-template-columns: 1fr; }
+  .between { padding: 72px 40px; text-align: center; }
+  .between p { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.35; color: var(--white); max-width: 760px; margin: 0 auto; }
+  @media (max-width: 768px) { .ah.slim { padding: 116px 24px 48px; } .between { padding: 56px 24px; } }
+
+  .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); margin-top: 48px; }
+  .stage { background: var(--navy-mid); padding: 40px 32px; position: relative; }
+  .stage::before { content: ''; position: absolute; top: 0; left: 0; width: 40px; height: 2px; background: var(--gold); }
+  .stage h3 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--white); margin-bottom: 14px; }
+  .stage p { font-size: 14px; color: var(--cream-dim); line-height: 1.8; }
+  .start-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px; margin-top: 48px; max-width: 900px; }
+  .start { display: grid; grid-template-columns: 56px 1fr; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .start .n { font-family: 'Cormorant Garamond', serif; font-size: 44px; color: var(--gold); line-height: 1; }
+  .start h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
+  .start p { font-size: 14px; color: var(--cream-dim); line-height: 1.75; }
+  @media (max-width: 960px) { .stage-grid, .start-grid { grid-template-columns: 1fr; } .start-grid { gap: 32px; } }
+
+  .tl { position: relative; margin-top: 8px; }
+  .tl::before { content: ''; position: absolute; left: 27px; top: 80px; bottom: 28px; width: 1px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.15)); }
+  .tl-item { position: relative; padding: 56px 0 56px 100px; border-top: 1px solid rgba(255,255,255,0.07); }
+  .tl-item:first-child { border-top: none; }
+  .tl-mark { position: absolute; left: 0; top: 52px; width: 56px; height: 56px; border-radius: 50%; background: var(--navy); border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); }
+  .tl-top { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+  .tl-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .tl-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 300; line-height: 1; color: var(--white); }
+  .tl-statement { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 2.6vw, 34px); font-weight: 300; line-height: 1.25; color: var(--white); margin-bottom: 16px; }
+  .tl-body { font-size: 15px; color: var(--cream-dim); line-height: 1.8; max-width: 560px; }
+  .tl-deliver { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; margin-top: 48px; }
+  .between.alt { background: var(--navy-mid); }
+  @media (max-width: 960px) {
+    .tl-top, .tl-deliver { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 768px) {
+    .tl::before { left: 21px; top: 64px; }
+    .tl-item { padding: 44px 0 44px 64px; }
+    .tl-mark { width: 44px; height: 44px; font-size: 18px; top: 42px; }
+  }
+
+  .tl-item { scroll-margin-top: 90px; }
+  .out { margin-top: 44px; }
+  .out-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px; }
+  .out-grid { display: grid; gap: 2px; background: rgba(255,255,255,0.05); }
+  .out-grid.four { grid-template-columns: repeat(4, 1fr); }
+  .out-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .out-item { background: var(--navy); padding: 26px 24px 28px; position: relative; }
+  .out-item::before { content: ''; position: absolute; top: 0; left: 0; width: 28px; height: 2px; background: var(--gold); }
+  .out-item .k { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--gold); margin-bottom: 8px; display: block; }
+  .out-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 8px; }
+  .out-item p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+  .out-note { font-size: 13px; color: var(--cream-dim); margin-top: 16px; line-height: 1.7; }
+  .span-bar { display: flex; align-items: center; gap: 20px; }
+  .span-bar .end { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); white-space: nowrap; }
+  .span-bar .rule { flex: 1; height: 1px; background: linear-gradient(to right, var(--gold), rgba(201,168,76,0.4)); position: relative; }
+  .span-bar .rule::before, .span-bar .rule::after { content: ''; position: absolute; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+  .span-bar .rule::before { left: 0; }
+  .span-bar .rule::after { right: 0; }
+  @media (max-width: 960px) { .out-grid.four, .out-grid.three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) { .out-grid.four, .out-grid.three { grid-template-columns: 1fr; } .span-bar { flex-direction: column; align-items: flex-start; gap: 10px; } .span-bar .rule { width: 1px; height: 36px; flex: none; margin-left: 4px; background: var(--gold); } .span-bar .rule::before { top: -4px; left: -4px; } .span-bar .rule::after { top: auto; bottom: -4px; right: auto; left: -4px; } }
+
+  .tl-body + .tl-body { margin-top: 14px; }
+  .tl-mark { z-index: 1; }
+
+</style>
+</head>
+<body id="top">
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()" aria-label="Close menu">&#10005;</button>
+  <a href="index.html#capabilities" onclick="closeMobileMenu()">Capabilities</a>
+  <a href="approach.html" onclick="closeMobileMenu()">Approach</a>
+  <a href="insights.html" onclick="closeMobileMenu()">Insights</a>
+  <a href="about.html" onclick="closeMobileMenu()">About</a>
+  <a href="index.html#contact" class="mobile-cta" onclick="closeMobileMenu()">Engage with Us</a>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo">Northgate<span> Strategic Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#capabilities">Capabilities</a></li>
+    <li><a href="approach.html" class="active">Approach</a></li>
+    <li><a href="insights.html">Insights</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Engage with Us</a>
+  <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<section class="ah slim">
+  <div class="ah-bg"></div>
+  <div class="ah-inner">
+    <div>
+      <p class="section-label">Our Approach</p>
+      <h1>How we help you<em>achieve your goals.</em></h1>
+      <p class="ah-intro">Three stages, from identifying the opportunity to delivering the result. Take them together or on their own.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap tl">
+    <div class="tl-item reveal" id="chart">
+      <div class="tl-mark">01</div>
+      <div class="tl-top">
+        <div><p class="tl-label">Identification</p><h2 class="tl-name">Chart</h2></div>
+        <div>
+          <p class="tl-statement">We find where the opportunity is, and where it is not.</p>
+          <p class="tl-body">We map the market, the buyers and the programs, and bring an outside view of which opportunities are worth pursuing, so leadership can decide where to commit.</p>
+        </div>
+      </div>
+      <div class="out">
+        <p class="out-label">What you walk away with</p>
+        <div class="out-grid four">
+          <div class="out-item"><span class="k">1</span><h4>Goal-alignment calls</h4><p>Introductory meetings and calls to agree what you want to achieve.</p></div>
+          <div class="out-item"><span class="k">2</span><h4>Market deep dive</h4><p>The market, the buyers and the programs that matter to you.</p></div>
+          <div class="out-item"><span class="k">3</span><h4>Opportunity analysis</h4><p>Which opportunities are worth pursuing, and which are not.</p></div>
+          <div class="out-item"><span class="k">4</span><h4>Next steps</h4><p>A clear plan for what happens next, and who does what.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item reveal" id="win">
+      <div class="tl-mark">02</div>
+      <div class="tl-top">
+        <div><p class="tl-label">RFPs and proposals</p><h2 class="tl-name">Win</h2></div>
+        <div>
+          <p class="tl-statement">We build the pitch, the response and the proposal.</p>
+          <p class="tl-body">Each is written around what your team does best, so the work you win is work you can deliver. Your people stay on the work while we handle the paperwork.</p>
+        </div>
+      </div>
+      <div class="out">
+        <p class="out-label">What you walk away with</p>
+        <div class="out-grid three">
+          <div class="out-item"><h4>A submitted RFP response</h4><p>Written and submitted for the opportunity you chose.</p></div>
+          <div class="out-item"><h4>A pitch, made</h4><p>Prepared and delivered to the buyer.</p></div>
+          <div class="out-item"><h4>A proposal, in the buyer's hands</h4><p>Built around what your team does best.</p></div>
+        </div>
+        <p class="out-note">Once the opportunity is identified, the deliverable is specific, and it is finished.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal" id="deliver">
+      <div class="tl-mark">03</div>
+      <div class="tl-top">
+        <div><p class="tl-label">Delivery</p><h2 class="tl-name">Deliver</h2></div>
+        <div>
+          <p class="tl-statement">Everyone is right. Not everyone is aligned.</p>
+          <p class="tl-body">A company is one entity made up of several teams, each with its own job and its own goals. All of them are right. The work is keeping them pointed the same way as a program grows.</p>
+          <p class="tl-body">As project manager on the client's behalf, we coordinate production, suppliers and the end user, so what was agreed is what gets built, delivered and accepted.</p>
+        </div>
+      </div>
+      <div class="tl-deliver">
+        <ol class="steps">
+          <li><span class="n">1</span><span><strong>Coordinate.</strong> The client, production, suppliers and end user, on one schedule.</span></li>
+          <li><span class="n">2</span><span><strong>Track.</strong> Milestones, risks and issues, with one point of contact.</span></li>
+          <li><span class="n">3</span><span><strong>Resolve.</strong> Whatever is blocking the plan, early.</span></li>
+        </ol>
+        <div class="scene"><svg id="sceneBand"></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap inv-grid">
+    <div class="reveal">
+      <p class="section-label">Our Level of Involvement</p>
+      <h2 class="h2">As close or as far as you want.</h2>
+      <p class="sec-intro">Some clients want us working alongside the team day to day. Others want a steady advisor who checks in at the key moments. Either works. You set the distance.</p>
+    </div>
+    <div class="dial reveal reveal-delay-1">
+      <svg id="dialSvg" role="img" aria-label="A diagram of your team, with Northgate either beside it or standing outside and checking in."></svg>
+      <input type="range" id="dialRange" min="0" max="100" value="0" aria-label="How close Northgate works with your team">
+      <div class="dial-ends"><span>Hands-on</span><span>Advisory</span></div>
+      <div class="dial-cap"><p id="capNear">Working alongside your team, day to day.</p><p id="capFar" style="opacity:0">A steady advisor, there at the key moments.</p></div>
+      <p class="dial-hint">Drag to see the difference.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact strip" id="contact">
+  <div class="contact-inner reveal">
+    <h2 class="contact-heading">Let's talk about<br><em>your</em> opportunity.</h2>
+    <p class="contact-body">Tell us what you are trying to win, or what you have already won and need delivered.</p>
+    <a href="mailto:alan.s@ngstrategic.com" class="btn-solid">Engage with Us</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">Northgate<span> Strategic Advisory</span></div>
+  <p class="footer-copy">&copy; <span id="year">2026</span> Northgate Strategic Advisory. Toronto, Ontario.</p>
+</footer>
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileMenu(); });
+  (function () {
+    var nav = document.querySelector('nav');
+    function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 24); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    var yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { observer.observe(el); });
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (h.length < 2) return;
+      a.addEventListener('click', function (e) {
+        var t = document.querySelector(h);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  })();
+
+  (function () {
+    var NS = 'http://www.w3.org/2000/svg';
+    var FS = 1.45;
+    var GOLD = '#c9a84c', CREAM = '#f4f1eb', DIM = '#ddd8cc', NAVY = '#0d1b2e';
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+    function mk(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+
+    var CX = 320, CY = 220;
+    var NODES = [
+      { n: 'SALES', g: 'Close quickly', th: -90, sc: 200 },
+      { n: 'MANAGEMENT', g: 'Margin and stability', th: -30, sc: 280 },
+      { n: 'CLIENT', g: 'The requirement', th: 30, sc: 20 },
+      { n: 'END USER', g: 'Usability', th: 90, sc: 160 },
+      { n: 'SUPPLIERS', g: 'Lead times', th: 150, sc: 235 },
+      { n: 'PRODUCTION', g: 'Quality and schedule', th: 210, sc: 250 } ];
+    NODES.forEach(function (d) {
+      var r = d.th * Math.PI / 180; d.x = CX + 230 * Math.cos(r); d.y = CY + 160 * Math.sin(r);
+      d.al = Math.atan2(CY - d.y, CX - d.x) * 180 / Math.PI;
+      var diff = ((d.sc - d.al + 540) % 360) - 180; d.diff = diff;
+      d.dist = Math.sqrt((CX - d.x) * (CX - d.x) + (CY - d.y) * (CY - d.y));
+    });
+    function Scene(svg, opts) {
+      var me = this;
+      me.p = opts.p || 0; me.aligned = !!opts.aligned; me.running = false; me.t0 = performance.now();
+      svg.setAttribute('viewBox', '0 -10 640 460');
+      svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', opts.label);
+      var g = mk('g', {}, svg);
+      me.orbit = mk('ellipse', { cx: CX, cy: CY, rx: 230, ry: 160, fill: 'none', stroke: GOLD, 'stroke-width': 1.2, 'stroke-dasharray': '2 6', 'stroke-linecap': 'round', opacity: 0 }, g);
+      me.center = mk('circle', { cx: CX, cy: CY, r: 46, fill: opts.fill, stroke: CREAM, 'stroke-opacity': 0.5, 'stroke-width': 1.4 }, g);
+      var ct = mk('text', { x: CX, y: CY - 2, 'text-anchor': 'middle', 'font-size': 12, 'letter-spacing': '2.6', fill: CREAM, 'font-family': 'DM Sans, sans-serif' }, g); ct.textContent = 'PROJECT';
+      me.ct2 = mk('text', { x: CX, y: CY + 17, 'text-anchor': 'middle', 'font-size': 9.5, 'letter-spacing': '2.2', fill: GOLD, 'font-family': 'DM Sans, sans-serif', opacity: 0 }, g); me.ct2.textContent = 'ONE PLAN';
+      me.arrows = NODES.map(function () {
+        return { line: mk('line', { stroke: GOLD, 'stroke-width': 2, 'stroke-linecap': 'round' }, g), head: mk('path', { fill: GOLD }, g) };
+      });
+      NODES.forEach(function (d) {
+        var gg = mk('g', { transform: 'translate(' + d.x + ',' + d.y + ')' }, g);
+        mk('rect', { x: -72, y: -27, width: 144, height: 54, rx: 3, fill: opts.fill, stroke: CREAM, 'stroke-opacity': 0.32 }, gg);
+        var a1 = mk('text', { y: -4, 'text-anchor': 'middle', 'font-size': 12.5, 'letter-spacing': '2.2', fill: CREAM, 'font-family': 'DM Sans, sans-serif' }, gg); a1.textContent = d.n;
+        var a2 = mk('text', { y: 14, 'text-anchor': 'middle', 'font-size': 12, fill: '#7a8fa6', 'font-family': 'Cormorant Garamond, serif', 'font-style': 'italic' }, gg); a2.textContent = d.g;
+      });
+      me.badge = mk('g', { opacity: 0, transform: 'translate(' + (CX + 230 * Math.cos(-Math.PI / 3)) + ',' + (CY + 160 * Math.sin(-Math.PI / 3)) + ')' }, g);
+      mk('circle', { r: 16, fill: opts.fill, stroke: GOLD, 'stroke-width': 1.6 }, me.badge);
+      var nt = mk('text', { 'text-anchor': 'middle', y: 6, 'font-size': 18, fill: GOLD, 'font-family': 'Cormorant Garamond, serif', 'font-weight': 500 }, me.badge); nt.textContent = 'N';
+      me.render(0);
+    }
+    Scene.prototype.render = function (t) {
+      var me = this, p = ease(Math.max(0, Math.min(1, me.p))), q = 1 - p;
+      NODES.forEach(function (d, i) {
+        var ang = (d.al + d.diff * q + Math.sin(t * 1.4 + i * 1.7) * 5 * q) * Math.PI / 180;
+        var len = lerp(135, d.dist - 58, p), ux = Math.cos(ang), uy = Math.sin(ang);
+        var x2 = d.x + ux * len, y2 = d.y + uy * len, o = me.arrows[i];
+        o.line.setAttribute('x1', d.x); o.line.setAttribute('y1', d.y);
+        o.line.setAttribute('x2', x2 - ux * 8); o.line.setAttribute('y2', y2 - uy * 8);
+        o.head.setAttribute('d', 'M' + x2 + ' ' + y2 + ' L' + (x2 - ux * 13 - uy * 6) + ' ' + (y2 - uy * 13 + ux * 6) + ' L' + (x2 - ux * 13 + uy * 6) + ' ' + (y2 - uy * 13 - ux * 6) + ' Z');
+        var op = lerp(0.55, 1, p); o.line.setAttribute('opacity', op); o.head.setAttribute('opacity', op);
+      });
+      me.center.setAttribute('stroke', p > 0.5 && me.aligned ? GOLD : CREAM);
+      me.center.setAttribute('stroke-opacity', me.aligned ? lerp(0.5, 1, p) : 0.5);
+      me.orbit.setAttribute('opacity', me.aligned ? p * 0.8 : 0);
+      me.badge.setAttribute('opacity', me.aligned ? p : 0);
+      me.ct2.setAttribute('opacity', me.aligned ? p : 0);
+    };
+    Scene.prototype.start = function () {
+      var me = this; if (me.running || reduce) return; me.running = true;
+      (function loop(now) { if (!me.running) return; me.render((now - me.t0) / 1000); requestAnimationFrame(loop); })(performance.now());
+    };
+    Scene.prototype.stop = function () { this.running = false; };
+    Scene.prototype.animateTo = function (target, ms) {
+      var me = this, from = me.p, t0 = performance.now();
+      if (reduce) { me.p = target; me.render(0); return; }
+      (function step(now) { var k = Math.min(1, (now - t0) / ms); me.p = lerp(from, target, k); if (k < 1) requestAnimationFrame(step); })(performance.now());
+    };
+    function watch(el, onIn, onOut, th) {
+      new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? onIn() : onOut && onOut(); }); }, { threshold: th || 0.3 }).observe(el);
+    }
+
+    var bandEl = document.getElementById('sceneBand');
+    var band = new Scene(bandEl, { p: 1, aligned: true, fill: '#0d1b2e', label: 'A map of the stakeholders on a program: Sales, Management, the client, the end user, suppliers and Production, all connected to one project plan, held together by Northgate.' });
+    band.render(0);
+
+    var dial = document.getElementById('dialSvg');
+    if (dial) {
+      dial.setAttribute('viewBox', '0 0 560 220');
+      mk('circle', { cx: 150, cy: 110, r: 84, fill: 'none', stroke: CREAM, 'stroke-opacity': 0.35, 'stroke-dasharray': '3 7' }, dial);
+      [[118, 94], [178, 88], [150, 140]].forEach(function (c) { mk('circle', { cx: c[0], cy: c[1], r: 7, fill: 'none', stroke: CREAM, 'stroke-width': 1.6 }, dial); });
+      var yt = mk('text', { x: 150, y: 218, 'text-anchor': 'middle', 'font-size': 10, 'letter-spacing': '2.4', fill: DIM, 'font-family': 'DM Sans, sans-serif' }, dial); yt.textContent = 'YOUR TEAM';
+      var link = mk('line', { y1: 110, y2: 110, stroke: GOLD, 'stroke-width': 1.4, 'stroke-dasharray': '2 6', 'stroke-linecap': 'round' }, dial);
+      var mark = mk('g', {}, dial);
+      mk('circle', { r: 15, fill: NAVY, stroke: GOLD, 'stroke-width': 1.8 }, mark);
+      var mt = mk('text', { 'text-anchor': 'middle', y: 6, 'font-size': 18, fill: GOLD, 'font-family': 'Cormorant Garamond, serif', 'font-weight': 500 }, mark); mt.textContent = 'N';
+      var rng = document.getElementById('dialRange'), c1 = document.getElementById('capNear'), c2 = document.getElementById('capFar');
+      function upd() {
+        var v = rng.value / 100, x = lerp(236, 450, v);
+        mark.setAttribute('transform', 'translate(' + x + ',110)');
+        link.setAttribute('x1', 236); link.setAttribute('x2', Math.max(236, x - 18));
+        link.setAttribute('opacity', Math.max(0, Math.min(1, (v - 0.2) * 3)));
+        c1.style.opacity = Math.max(0, 1 - v * 2); c2.style.opacity = Math.max(0, v * 2 - 1);
+        if (v >= 0.5) { c1.style.opacity = 0; } else { c2.style.opacity = 0; }
+      }
+      rng.addEventListener('input', upd); upd();
+    }
+  })();
+</script>
+</body>
+</html>
