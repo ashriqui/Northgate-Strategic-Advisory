@@ -216,7 +216,7 @@
   .tl-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 300; line-height: 1; color: var(--white); }
   .tl-statement { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 2.6vw, 34px); font-weight: 300; line-height: 1.25; color: var(--white); margin-bottom: 16px; }
   .tl-body { font-size: 15px; color: var(--cream-dim); line-height: 1.8; max-width: 560px; }
-  .tl-deliver { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; margin-top: 48px; }
+  .tl-deliver { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; margin-top: 48px; }
   .between.alt { background: var(--navy-mid); }
   @media (max-width: 960px) {
     .tl-top, .tl-deliver { grid-template-columns: 1fr; gap: 24px; }
@@ -431,16 +431,16 @@
       var g = mk('g', {}, svg);
       me.orbit = mk('ellipse', { cx: CX, cy: CY, rx: 230, ry: 160, fill: 'none', stroke: GOLD, 'stroke-width': 1.2, 'stroke-dasharray': '2 6', 'stroke-linecap': 'round', opacity: 0 }, g);
       me.center = mk('circle', { cx: CX, cy: CY, r: 46, fill: opts.fill, stroke: CREAM, 'stroke-opacity': 0.5, 'stroke-width': 1.4 }, g);
-      var ct = mk('text', { x: CX, y: CY - 2, 'text-anchor': 'middle', 'font-size': 12, 'letter-spacing': '2.6', fill: CREAM, 'font-family': 'DM Sans, sans-serif' }, g); ct.textContent = 'PROJECT';
-      me.ct2 = mk('text', { x: CX, y: CY + 17, 'text-anchor': 'middle', 'font-size': 9.5, 'letter-spacing': '2.2', fill: GOLD, 'font-family': 'DM Sans, sans-serif', opacity: 0 }, g); me.ct2.textContent = 'ONE PLAN';
+      var ct = mk('text', { x: CX, y: CY - 2, 'text-anchor': 'middle', 'font-size': 13, 'letter-spacing': '2.2', fill: CREAM, 'font-family': 'DM Sans, sans-serif' }, g); ct.textContent = 'PROJECT';
+      me.ct2 = mk('text', { x: CX, y: CY + 17, 'text-anchor': 'middle', 'font-size': 10.5, 'letter-spacing': '2.2', fill: GOLD, 'font-family': 'DM Sans, sans-serif', opacity: 0 }, g); me.ct2.textContent = 'ONE PLAN';
       me.arrows = NODES.map(function () {
         return { line: mk('line', { stroke: GOLD, 'stroke-width': 2, 'stroke-linecap': 'round' }, g), head: mk('path', { fill: GOLD }, g) };
       });
       NODES.forEach(function (d) {
         var gg = mk('g', { transform: 'translate(' + d.x + ',' + d.y + ')' }, g);
-        mk('rect', { x: -72, y: -27, width: 144, height: 54, rx: 3, fill: opts.fill, stroke: CREAM, 'stroke-opacity': 0.32 }, gg);
-        var a1 = mk('text', { y: -4, 'text-anchor': 'middle', 'font-size': 12.5, 'letter-spacing': '2.2', fill: CREAM, 'font-family': 'DM Sans, sans-serif' }, gg); a1.textContent = d.n;
-        var a2 = mk('text', { y: 14, 'text-anchor': 'middle', 'font-size': 12, fill: '#7a8fa6', 'font-family': 'Cormorant Garamond, serif', 'font-style': 'italic' }, gg); a2.textContent = d.g;
+        mk('rect', { x: -80, y: -30, width: 160, height: 60, rx: 3, fill: opts.fill, stroke: CREAM, 'stroke-opacity': 0.32 }, gg);
+        var a1 = mk('text', { y: -4, 'text-anchor': 'middle', 'font-size': 14, 'letter-spacing': '2.2', fill: CREAM, 'font-family': 'DM Sans, sans-serif' }, gg); a1.textContent = d.n;
+        var a2 = mk('text', { y: 16, 'text-anchor': 'middle', 'font-size': 13.5, fill: '#7a8fa6', 'font-family': 'Cormorant Garamond, serif', 'font-style': 'italic' }, gg); a2.textContent = d.g;
       });
       me.badge = mk('g', { opacity: 0, transform: 'translate(' + (CX + 230 * Math.cos(-Math.PI / 3)) + ',' + (CY + 160 * Math.sin(-Math.PI / 3)) + ')' }, g);
       mk('circle', { r: 16, fill: opts.fill, stroke: GOLD, 'stroke-width': 1.6 }, me.badge);
