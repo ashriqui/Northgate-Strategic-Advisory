@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Industry Insights — Northgate Strategic Advisory</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Insights | Northgate Strategic Advisory</title>
+<meta name="description" content="What Northgate Strategic Advisory is tracking: strategic shifts in defence, consumer packaged goods and global markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -24,23 +26,83 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  [hidden] { display: none !important; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(13,27,46,0.97) 0%, transparent 100%); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(13,27,46,0.97) 0%, transparent 100%); transition: background 0.3s, padding 0.3s; }
+  nav.scrolled { background: rgba(13,27,46,0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.06); padding-top: 16px; padding-bottom: 16px; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); text-decoration: none; line-height: 1.2; }
   .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
+  .nav-links { display: flex; gap: 22px; list-style: none; }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-cta { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 10px 20px; transition: all 0.25s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--gold); color: var(--navy); }
+  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-  /* HAMBURGER - mobile only */
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-  .hamburger span { display: block; width: 22px; height: 1px; background: var(--cream); transition: all 0.3s; }
-  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 1px; background: var(--cream); }
+  .mobile-menu { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
   .mobile-menu.open { display: flex; }
   .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--cream); text-decoration: none; letter-spacing: 0.05em; }
   .mobile-menu a:hover { color: var(--gold); }
-  .mobile-close { position: absolute; top: 24px; right: 40px; font-size: 28px; color: var(--cream-dim); cursor: pointer; background: none; border: none; }
+  .mobile-menu a.mobile-cta { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 14px 32px; margin-top: 8px; }
+  .mobile-close { position: absolute; top: 20px; right: 32px; font-size: 28px; color: var(--cream-dim); cursor: pointer; background: none; border: none; padding: 8px; }
+
+  /* SHARED TYPE */
+  .section-label { font-size: 10px; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 20px; }
+  .section-heading em { font-style: italic; color: var(--gold); }
+  .section-body { font-size: 15px; color: var(--cream-dim); line-height: 1.8; max-width: 620px; }
+  .section-divider { height: 1px; background: linear-gradient(to right, transparent, var(--navy-light), transparent); margin: 0 40px; }
+
+  .btn-ghost { display: inline-flex; align-items: center; gap: 14px; padding: 16px 36px; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: all 0.25s ease; }
+  .btn-ghost:hover { background: var(--gold); color: var(--navy); }
+  .btn-ghost svg { transition: transform 0.2s; }
+  .btn-ghost:hover svg { transform: translateX(4px); }
+  .btn-solid { display: inline-flex; align-items: center; gap: 14px; padding: 16px 40px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
+  .btn-solid:hover { background: var(--gold-light); }
+
+  /* CONTACT */
+  .contact { padding: 120px 40px; background: var(--navy); position: relative; overflow: hidden; }
+  .contact::before { content: ''; position: absolute; bottom: -200px; left: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 60%); pointer-events: none; }
+  .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; position: relative; }
+  .contact-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 24px; }
+  .contact-heading em { font-style: italic; color: var(--gold); }
+  .contact-body { font-size: 15px; color: var(--cream-dim); line-height: 1.75; margin-bottom: 44px; }
+  .contact-note { font-size: 12px; color: var(--text-muted); letter-spacing: 0.06em; margin-top: 20px; }
+
+  /* FOOTER */
+  footer { padding: 32px 40px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-muted); }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 1200px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 18px 24px; }
+    nav.scrolled { padding-top: 14px; padding-bottom: 14px; }
+    .nav-logo { font-size: 14px; }
+    .section-divider { margin: 0 24px; }
+    .contact { padding: 80px 24px; }
+    .btn-solid { padding: 16px 28px; font-size: 11px; }
+    footer { padding: 24px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
 
   /* PAGE HEADER */
   .page-header { padding: 160px 40px 80px; position: relative; overflow: hidden; }
@@ -82,106 +144,50 @@
   .contact-email { display: inline-flex; align-items: center; gap: 14px; padding: 16px 40px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
   .contact-email:hover { background: var(--gold-light); }
 
-  /* FOOTER */
-  footer { padding: 32px 40px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); }
-  .footer-logo span { color: var(--gold); }
-  .footer-copy { font-size: 11px; color: var(--text-muted); }
-
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 768px) {
-    nav { padding: 20px 24px; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .page-header { padding: 130px 24px 60px; }
-    .section-divider { margin: 0 24px; }
-    .insights { padding: 56px 24px 80px; }
-    .insight-link { padding: 24px 24px; gap: 16px; }
-    .insight-title { font-size: 18px; }
-    .contact-strip { padding: 64px 24px; }
-    footer { padding: 24px; flex-direction: column; align-items: flex-start; gap: 8px; }
-    .nav-logo { font-size: 14px; }
-  }
+  
+  .insight-entry { display: block; }
+  @media (max-width: 768px) { .page-header { padding: 116px 24px 56px; } .insights { padding: 56px 24px 80px; } .insight-link { padding: 24px; gap: 16px; } .insight-title { font-size: 18px; } .contact-strip { padding: 64px 24px; } }
 </style>
 </head>
-<body>
-
-<!-- MOBILE MENU -->
+<body id="top">
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <button class="mobile-close" onclick="closeMobileMenu()" aria-label="Close menu">&#10005;</button>
   <a href="index.html#capabilities" onclick="closeMobileMenu()">Capabilities</a>
-  <a href="index.html#approach" onclick="closeMobileMenu()">Approach</a>
-  <a href="index.html#about" onclick="closeMobileMenu()">About</a>
-  <a href="insights.html" onclick="closeMobileMenu()">Industry Insights</a>
-  <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="approach.html" onclick="closeMobileMenu()">Approach</a>
+  <a href="insights.html" onclick="closeMobileMenu()">Insights</a>
+  <a href="about.html" onclick="closeMobileMenu()">About</a>
+  <a href="index.html#contact" class="mobile-cta" onclick="closeMobileMenu()">Engage with Us</a>
 </div>
-
 <nav>
   <a href="index.html" class="nav-logo">Northgate<span> Strategic Advisory</span></a>
   <ul class="nav-links">
     <li><a href="index.html#capabilities">Capabilities</a></li>
-    <li><a href="index.html#approach">Approach</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="insights.html" class="active">Industry Insights</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="approach.html">Approach</a></li>
+    <li><a href="insights.html" class="active">Insights</a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
-  <div class="hamburger" onclick="openMobileMenu()">
-    <span></span><span></span><span></span>
-  </div>
+  <a href="index.html#contact" class="nav-cta">Engage with Us</a>
+  <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- PAGE HEADER -->
 <section class="page-header">
   <div class="page-header-bg"></div>
   <div class="page-header-content">
-    <p class="section-label">Industry Insights</p>
-    <h1 class="page-heading">This week in <em>procurement.</em></h1>
-    <p class="page-body">A running record of what's moving in Canadian federal and provincial procurement, government-adjacent opportunity, and the broader market shifts that matter to the companies we work with.</p>
+    <p class="section-label">Insights</p>
+    <h1 class="page-heading">What we're <em>tracking.</em></h1>
+    <p class="page-body">The shifts in defence, consumer packaged goods and global markets that have our attention, and why we think they matter.</p>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- INSIGHTS LIST -->
 <section class="insights">
   <div class="insights-inner" id="insightsList">
     <!-- ENTRIES_START -->
-    <a href="insights/the-doorman-got-fired.html" class="insight-entry">
-      <div class="insight-link">
-        <div class="insight-header-text">
-          <p class="insight-date">August 14, 2026</p>
-          <h3 class="insight-title">The Doorman Got Fired: What Ottawa's New Speed Means for Doing Business With Canada</h3>
-          <p class="insight-teaser">From centralized decision-making to deputy ministers replaced for not being "fit for purpose" to a foreign service rewritten around commercial results, Ottawa has restructured itself around speed. Here's what that means right now.</p>
-          <div class="insight-tags">
-            <span class="insight-tag">Government Reform</span>
-            <span class="insight-tag">Federal Procurement</span>
-            <span class="insight-tag">Small Business</span>
-          </div>
-        </div>
-        <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
-    <a href="insights/straight-as-and-a-loose-chainsaw.html" class="insight-entry">
-      <div class="insight-link">
-        <div class="insight-header-text">
-          <p class="insight-date">July 31, 2026</p>
-          <h3 class="insight-title">Straight A's and a Loose Chainsaw: What We Can Learn From Canada's Internal Trade Report Card</h3>
-          <p class="insight-teaser">Ottawa jumped from a C to an A-plus on interprovincial trade in one year. The data behind the grade, and the gap between the grade and what's changed on the ground, are both worth understanding.</p>
-          <div class="insight-tags">
-            <span class="insight-tag">Small Business</span>
-            <span class="insight-tag">Internal Trade</span>
-            <span class="insight-tag">Policy Analysis</span>
-          </div>
-        </div>
-        <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
     <a href="insights/standing-invitation-defence-drone-initiative.html" class="insight-entry">
       <div class="insight-link">
         <div class="insight-header-text">
-          <p class="insight-date">July 24, 2026</p>
+          <p class="insight-date">July 2026</p>
           <h3 class="insight-title">The Standing Invitation: What Ottawa's New Drone Program Gets Right</h3>
           <p class="insight-teaser">Ottawa's new Defence Drone Initiative isn't a one-shot deadline. It's built to keep letting new Canadian suppliers in, which says as much about the procurement model as it does about drones.</p>
           <div class="insight-tags">
@@ -196,7 +202,7 @@
     <a href="insights/london-factory-floor-supply-chain.html" class="insight-entry">
       <div class="insight-link">
         <div class="insight-header-text">
-          <p class="insight-date">July 17, 2026</p>
+          <p class="insight-date">July 2026</p>
           <h3 class="insight-title">The London Factory Floor: Where a $2 Billion Contract Goes</h3>
           <p class="insight-teaser">Ottawa just committed nearly $2 billion to one company for 190 armoured vehicles. The more useful story is the 600-plus Canadian suppliers behind it, and what that means for a business that isn't General Dynamics.</p>
           <div class="insight-tags">
@@ -211,7 +217,7 @@
     <a href="insights/the-house-nobody-would-fix.html" class="insight-entry">
       <div class="insight-link">
         <div class="insight-header-text">
-          <p class="insight-date">July 9, 2026</p>
+          <p class="insight-date">July 2026</p>
           <h3 class="insight-title">The House Nobody Would Fix: Managed Decay, and How to Avoid It in Your Business</h3>
           <p class="insight-teaser">Canada's Prime Minister just announced a plan to restore 24 Sussex Drive, vacant for a decade. The real story isn't the renovation, it's what ten years of avoiding a decision actually cost.</p>
           <div class="insight-tags">
@@ -226,8 +232,8 @@
     <a href="insights/the-quiet-one-won.html" class="insight-entry">
       <div class="insight-link">
         <div class="insight-header-text">
-          <p class="insight-date">July 6, 2026</p>
-          <h3 class="insight-title">The Quiet One Won: What the Submarine Decision Actually Teaches</h3>
+          <p class="insight-date">July 2026</p>
+          <h3 class="insight-title">How Canada Picks a $60 Billion Winner</h3>
           <p class="insight-teaser">Canada picked TKMS over Hanwha for its $60 billion submarine fleet. The louder, better-marketed bid lost anyway, and that's the whole lesson.</p>
           <div class="insight-tags">
             <span class="insight-tag">Defence Procurement</span>
@@ -238,40 +244,10 @@
         <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
     </a>
-    <a href="insights/canada-submarine-procurement-lessons.html" class="insight-entry">
-      <div class="insight-link">
-        <div class="insight-header-text">
-          <p class="insight-date">June 30, 2026</p>
-          <h3 class="insight-title">How Canada Picks a $60 Billion Winner: Lessons for Small Business</h3>
-          <p class="insight-teaser">Canada hasn't announced who's building its next fleet of submarines, but the competition between two very different bidders already says a lot about how government procurement actually works, at any scale.</p>
-          <div class="insight-tags">
-            <span class="insight-tag">Defence Procurement</span>
-            <span class="insight-tag">Government Contracts</span>
-            <span class="insight-tag">Small Business</span>
-          </div>
-        </div>
-        <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
-    <a href="insights/contracts-not-subsidies.html" class="insight-entry">
-      <div class="insight-link">
-        <div class="insight-header-text">
-          <p class="insight-date">June 23, 2026</p>
-          <h3 class="insight-title">Contracts, Not Subsidies: What Ottawa Admits About Buying From Small Business</h3>
-          <p class="insight-teaser">Governments are good at funding small businesses and noticeably worse at actually buying from them. That gap shows up everywhere, not just in tech, and it's worth understanding before you bid.</p>
-          <div class="insight-tags">
-            <span class="insight-tag">Small Business</span>
-            <span class="insight-tag">Government Contracts</span>
-            <span class="insight-tag">Procurement Strategy</span>
-          </div>
-        </div>
-        <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
     <a href="insights/buy-canadian-5mm-threshold.html" class="insight-entry">
       <div class="insight-link">
         <div class="insight-header-text">
-          <p class="insight-date">June 15, 2026</p>
+          <p class="insight-date">June 2026</p>
           <h3 class="insight-title">Buy Canadian Policy Reduced from $25MM to $5MM: One Small Step for Procurement, Not Yet a Giant Leap for Canadian Suppliers</h3>
           <p class="insight-teaser">Lowering the Buy Canadian threshold is a real signal, but most day-to-day federal purchasing still falls below the line. Here's what the change actually does, and doesn't, change.</p>
           <div class="insight-tags">
@@ -283,41 +259,10 @@
         <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
     </a>
-    <a href="insights/defence-investment-agency.html" class="insight-entry">
-      <div class="insight-link">
-        <div class="insight-header-text">
-          <p class="insight-date">May 27, 2026</p>
-          <h3 class="insight-title">A Slower Start, a Faster System: Inside the Defence Investment Agency</h3>
-          <p class="insight-teaser">A former RBC deputy chairman is now running Canada's defence procurement overhaul. The mandate is genuinely ambitious, but the industry itself is warning the transition could get bumpy before it gets faster.</p>
-          <div class="insight-tags">
-            <span class="insight-tag">Defence Procurement</span>
-            <span class="insight-tag">Government Reform</span>
-            <span class="insight-tag">Industry Outlook</span>
-          </div>
-        </div>
-        <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
-    <a href="insights/small-business-procurement-program.html" class="insight-entry">
-      <div class="insight-link">
-        <div class="insight-header-text">
-          <p class="insight-date">May 15, 2026</p>
-          <h3 class="insight-title">Small Business Gets a Seat at the Table: Inside the New Procurement Program</h3>
-          <p class="insight-teaser">A new federal program promises to make it easier for small and medium businesses to win government contracts. Here's what's confirmed, what's still unknown, and what to do while you wait.</p>
-          <div class="insight-tags">
-            <span class="insight-tag">Small Business</span>
-            <span class="insight-tag">Federal Procurement</span>
-            <span class="insight-tag">Buy Canadian</span>
-          </div>
-        </div>
-        <svg class="insight-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
     <!-- ENTRIES_END -->
   </div>
 </section>
 
-<!-- CONTACT STRIP -->
 <section class="contact-strip">
   <div class="contact-strip-inner reveal">
     <h2 class="contact-strip-heading">Have a question about<br>something <em>you've read?</em></h2>
@@ -328,17 +273,33 @@
 
 <footer>
   <div class="footer-logo">Northgate<span> Strategic Advisory</span></div>
-  <p class="footer-copy">© 2025 Northgate Strategic Advisory. Toronto, Ontario.</p>
+  <p class="footer-copy">&copy; <span id="year">2026</span> Northgate Strategic Advisory. Toronto, Ontario.</p>
 </footer>
-
 <script>
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileMenu(); });
+  (function () {
+    var nav = document.querySelector('nav');
+    function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 24); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    var yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { observer.observe(el); });
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (h.length < 2) return;
+      a.addEventListener('click', function (e) {
+        var t = document.querySelector(h);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  })();
 </script>
 </body>
 </html>
